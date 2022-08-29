@@ -952,7 +952,7 @@ static void GUI_SetSection(GUI* _this, BOOL bCheckEnablement, int dwSection)
 
 static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
 {
-    setlocale(LC_CTYPE, "zh-CN.UTF-8");
+    setlocale(LC_CTYPE, "chs");
     GUI* _this;
     LONG_PTR ptr = GetWindowLongPtr(hwnd, GWLP_USERDATA);
     _this = (int*)(ptr);
