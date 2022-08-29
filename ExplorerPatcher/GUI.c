@@ -1345,7 +1345,7 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                                         if (GetTimeFormatEx(wszWeatherLanguage[0] ? wszWeatherLanguage : wszLanguage, TIME_NOSECONDS, &stLastUpdate, NULL, wszTime, MAX_PATH))
                                         {
                                             bOk = TRUE;
-                                            swprintf_s(text, MAX_LINE_LENGTH, L"上一次更新: %s, %s.", wszDate, wszTime);
+                                            swprintf_s(text, MAX_LINE_LENGTH, Utf8Text("上一次更新: %s, %s."), wszDate, wszTime);
                                         }
                                     }
                                 }
@@ -3145,7 +3145,7 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                                 1,
                                 0
                             );
-                            swprintf(text + 3, MAX_LINE_LENGTH, _TEXT("禁用应用切换列表( Alt + %c )"), key);
+                            swprintf(text + 3, MAX_LINE_LENGTH, Utf8Text("禁用应用切换列表( Alt + %c )"), key);
                         }
                         if (tabOrder == _this->tabOrder)
                         {
