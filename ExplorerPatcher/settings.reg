@@ -1,187 +1,187 @@
 ﻿Windows Registry Editor Version 5.00
 
 
-;M Settings
+;M 设置
 ;q
 
-;T Taskbar
+;T 任务栏
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;z 2 Taskbar style *
-;x 0 Windows 11 (default)
+;z 2 任务栏风格 *
+;x 0 Windows 11 (默认)
 ;x 1 Windows 10
 "OldTaskbar"=dword:00000001
-;y More taskbar options in the Settings app 🡕                                                            
+;y 在Windows设置中设置任务栏 🡕                                                            
 ;ms-settings:taskbar
-;y Customize notification area icons 🡕
+;y 自定义通知区域图标 🡕
 ;shell:::{05d7b0f4-2121-4eff-bf6b-ed3f69b894d9}
-;y Customize system icons in the notification area 🡕
+;y 自定义通知区域系统图标 🡕
 ;shell:::{05d7b0f4-2121-4eff-bf6b-ed3f69b894d9}\SystemIcons
 ;s Taskbar_LocationSection !(IsWindows11Version22H2OrHigher&&!IsOldTaskbar)
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;c 4 Primary taskbar location on screen *
-;x 3 Bottom (default)
-;x 1 Top
-;x 0 Left
-;x 2 Right
+;c 4 设置任务栏在主显示器中的位置(仅win10风格) *
+;x 3 下 (默认)
+;x 1 上
+;x 0 左
+;x 2 右
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_TaskbarPosition"=dword:00000003
-;c 4 Secondary taskbar(s) location on screen
-;x 3 Bottom (default)
-;x 1 Top
-;x 0 Left
-;x 2 Right
+;c 4 设置任务栏在其他显示器中的位置(仅win10风格)
+;x 3 下 (默认)
+;x 1 上
+;x 0 左
+;x 2 右
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_MMTaskbarPosition"=dword:00000003
 ;g Taskbar_LocationSection
 ;s Taskbar_CortanaButtonSection !IsWindows11Version22H2OrHigher
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-;c 3 Extra button should be
-;x 0 Hidden (default)
-;x 2 Shown and open Cortana
-;x 1 Shown and open Widgets
+;c 3 额外的任务栏按钮位置
+;x 0 隐藏 (默认)
+;x 2 显示Cortana按钮
+;x 1 显示Widgets按钮
 "TaskbarDa"=dword:00000000
 ;g Taskbar_CortanaButtonSection
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search]
-;b Show Search button
+;b 显示搜索按钮
 "SearchboxTaskbarMode"=dword:00000001
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-;b Show Task view button
+;b 显示任务栏视图按钮
 "ShowTaskViewButton"=dword:00000001
 ;s Taskbar_CortanaButtonSection1 IsWindows11Version22H2OrHigher
 ;s Taskbar_CortanaButtonSection2 !IsOldTaskbar
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-;b Show Widgets button
+;b 显示任务栏人脉按钮
 "TaskbarDa"=dword:00000001
 ;g Taskbar_CortanaButtonSection2
 ;g Taskbar_CortanaButtonSection1
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b Automatically hide the taskbar
+;b 自动隐藏任务栏
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_AutoHideTaskbar"=dword:00000000
 ;s Taskbar_Windows10Section IsOldTaskbar
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;c 2 Start button style *
-;x 0 Windows 10 (default)
+;c 2 开始菜单按钮风格 *
+;x 0 Windows 10 (默认)
 ;x 1 Windows 11
 "OrbStyle"=dword:00000000
-;c 5 Primary taskbar alignment
-;x 0 At screen edge (default)
-;x 1 Centered
-;x 5 Centered, at screen edge when full
-;x 3 Centered with Start button
-;x 7 Centered with Start button, at screen edge when full
+;c 5 主显示器的任务栏对齐方式
+;x 0 在屏幕边缘 (默认)
+;x 1 中央
+;x 5 中央, 排列满时在屏幕边缘
+;x 3 中央和开始菜单
+;x 7 中央和开始菜单, 排列满时在屏幕边缘
 "OldTaskbarAl"=dword:00000000
-;c 5 Secondary taskbar(s) alignment
-;x 0 At screen edge (default)
-;x 1 Centered
-;x 5 Centered, at screen edge when full
-;x 3 Centered with Start button
-;x 7 Centered with Start button, at screen edge when full
+;c 5 其他显示器的任务栏对齐方式
+;x 0 在屏幕边缘 (默认)
+;x 1 中央
+;x 5 中央, 排列满时在屏幕边缘
+;x 3 中央和开始菜单
+;x 7 中央和开始菜单, 排列满时在屏幕边缘
 "MMOldTaskbarAl"=dword:00000000
-;c 3 Combine taskbar icons on primary taskbar
-;x 0 Always combine
-;x 1 Combine when taskbar is full
-;x 2 Never combine (default)
+;c 3 合并任务栏图标 (主显示器)
+;x 0 始终合并
+;x 1 当任务栏图标排列满时
+;x 2 永不合并 (默认)
 "TaskbarGlomLevel"=dword:00000002
-;c 3 Combine taskbar icons on secondary taskbar(s)
-;x 0 Always combine
-;x 1 Combine when taskbar is full
-;x 2 Never combine (default)
+;c 3 合并任务栏图标 (其他显示器)
+;x 0 始终合并
+;x 1 任务栏排满时组合同类图标
+;x 2 永不合并 (默认)
 "MMTaskbarGlomLevel"=dword:00000002
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-;c 2 Taskbar icon size
-;x 1 Small
-;x 0 Large (default)
+;c 2 任务栏图标大小
+;x 1 小
+;x 0 大 (默认)
 "TaskbarSmallIcons"=dword:00000000
 ;e 
 ;e 
 ;g Taskbar_Windows10Section
 
 
-;T System tray
+;T 系统托盘
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b Skin taskbar and tray pop-up menus
+;b 任务栏皮肤及托盘弹出菜单
 "SkinMenus"=dword:00000001
-;b Center tray icon pop-up menus
+;b 托盘图标弹出菜单居中
 "CenterMenus"=dword:00000001
-;b Flyout behavior for tray icon pop-up menus
+;b 托盘图标弹出菜单展示方式
 "FlyoutMenus"=dword:00000001
 [HKEY_CURRENT_USER\Software\Microsoft\TabletTip\1.7]
-;b Show touch keyboard button *
+;b 显示触摸键盘按钮 *
 "TipbandDesiredVisibility"=dword:00000000
 ;s SystemTray_Section98 IsOldTaskbar
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-;b Show seconds in the clock
+;b 在时钟中显示秒
 "ShowSecondsInSystemClock"=dword:00000000
 ;g SystemTray_Section98
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;i Control Center button *
+;i 控制中心按钮 *
 "HideControlCenterButton"=dword:00000000
 ;s SystemTray_Section109 IsOldTaskbar
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-;c 3 Show desktop button
-;x 1 Enabled (default)
-;x 0 Disabled
-;x 2 Hidden
+;c 3 显示桌面按钮
+;x 1 启用 (默认)
+;x 0 禁用
+;x 2 隐藏
 "TaskbarSD"=dword:00000001
 ;g SystemTray_Section109
 ;s SystemTray_Section117 !IsOldTaskbar
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-;b Show desktop button
+;b 显示桌面按钮
 "TaskbarSD"=dword:00000001
 ;g SystemTray_Section117
 ;s SystemTray_Windows10Section IsOldTaskbar
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;p 2
-;b Apply Windows 11 style to system tray icons *
+;b 在系统托盘中使用Windows11风格图标 *
 "SkinIcons"=dword:00000001
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;a Choosing 'Open Network && Internet settings' when right clicking the
-;c 3 network icon should open:
-;x 0 Network section in the Settings app (default)
-;x 1 Network and Sharing Center in Control Panel
-;x 2 Network Connections in Control Panel
+;a 当右键单击 '打开网络和Internet设置' 图标时
+;c 3 应该打开:
+;x 0 Windows11网络设置 (默认)
+;x 1 网络和共享中心面板
+;x 2 网络连接面板
 "ReplaceNetwork"=dword:00000000
 ;q
-;t When clicking a system icon in the system tray, open:
+;t 当点击系统托盘中的系统图标时，打开:
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Control Panel\Settings\Network]
-;c 7 Network
-;x 6 Control Center
-;x 5 Windows 11 WiFi flyout
-;x 0 Windows 10 flyout (default)
-;x 2 Windows 8 flyout
-;x 1 Network section in the Settings app
-;x 3 Network and Sharing Center in Control Panel
-;x 4 Network Connections in Control Panel
+;c 7 网络
+;x 6 控制中心
+;x 5 Windows 11 WiFi 面板
+;x 0 Windows 10 菜单 (default)
+;x 2 Windows 8 面板
+;x 1 在win11设置应用中设置网络
+;x 3 网络和共享中心面板
+;x 4 网络连接面板
 "ReplaceVan"=dword:00000000
 [HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\MTCUVC]
-;c 2 Sound
-;x 1 Windows 10 flyout (default)
-;x 0 Windows 7 flyout
+;c 2 声音
+;x 1 Windows 10 音量合成器 (默认)
+;x 0 Windows 7 音量合成器
 "EnableMtcUvc"=dword:00000001
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ImmersiveShell]
 ;c 3 Clock
-;x 2 Windows 11 flyout
-;x 0 Windows 10 flyout (default)
+;x 2 Windows 11 时钟
+;x 0 Windows 10 时钟 (默认)
 ;x 1 Windows 7
 "UseWin32TrayClockExperience"=dword:00000000
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ImmersiveShell]
-;c 2 Battery
-;x 0 Windows 10 flyout (default)
+;c 2 电池
+;x 0 Windows 10 面板 (默认)
 ;x 1 Windows 7
 "UseWin32BatteryFlyout"=dword:00000000
 ;s SystemTray_LanguageSwitcherBefore22H2 !IsWindows11Version22H2OrHigher
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;c 3 Language switcher *
-;x 0 Windows 11 (default)
-;x 1 Windows 10 (with link to "Language Preferences")
+;c 3 语言切换 *
+;x 0 Windows 11 (默认)
+;x 1 Windows 10 (包含语言首选项选择)
 ;x 4 Windows 10
 "IMEStyle"=dword:00000000
 ;g SystemTray_LanguageSwitcherBefore22H2
 ;s SystemTray_LanguageSwitcherAfter22H2 IsWindows11Version22H2OrHigher
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;c 4 Language switcher *
-;x 0 Windows 11 (default)
+;c 4 语言切换 *
+;x 0 Windows 11 (默认)
 ;x 7 Windows 10
-;x 1 Windows 10 (with link to "Language Preferences") (no animation)
-;x 4 Windows 10 (no animation)
+;x 1 Windows 10 (包含语言首选项选择) (无动画)
+;x 4 Windows 10 (无动画)
 "IMEStyle"=dword:00000000
 ;g SystemTray_LanguageSwitcherAfter22H2
 ;g SystemTray_Windows10Section
@@ -189,85 +189,85 @@
 
 
 ;T File Explorer
-;e For the settings marked with (**) to work in Open or Save file dialogs as well, register
-;e this utility as shell extension using the option below.
-;y Learn more 🡕
+;e 如果想要让标有(**)的设置在"打开/保存"的对话框能正常工作, register
+;e 请使用"注册为外壳扩展"将此程序注册为外壳扩展
+;y 点击查看详细的说明 🡕
 ;https://github.com/valinet/ExplorerPatcher/wiki/Using-ExplorerPatcher-as-shell-extension
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;q
-;b Register as shell extension
+;b 注册为外壳扩展
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_RegisterAsShellExtension"=dword:00000000
 [-HKEY_CURRENT_USER\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32]
-;d Disable the Windows 11 context menu *
+;d 禁用屎一样的win11右键菜单 *
 @=""
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b Always use legacy file transfer dialog
+;b 使用旧的文件传输对话框
 "LegacyFileTransferDialog"=dword:00000000
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b Use classic drive groupings in This PC
+;b 使用经典的磁盘分组
 "UseClassicDriveGrouping"=dword:00000000
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;c 3 Control Interface *
-;x 0 Windows 11 Command Bar (default)
+;c 3 资源管理器控制组件 *
+;x 0 Windows 11 Command Bar (默认)
 ;x 1 Windows 10 Ribbon
 ;x 2 Windows 7 Command Bar
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_FileExplorerCommandUI"=dword:00000000
-;t The following settings take effect on newly created File Explorer windows:
+;t 以下的设置在创建新资源管理器窗口时有效:
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;i Use immersive menus when displaying Windows 10 context menus **
+;i 在显示Windows 10右键菜单时使用沉浸式菜单 **
 "DisableImmersiveContextMenu"=dword:00000000
 [-HKEY_CURRENT_USER\Software\Classes\CLSID\{056440FD-8568-48e7-A632-72157243B55B}\InprocServer32]
-;d Disable navigation bar **
+;d 禁用导航栏 **
 @=""
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b Disable modern search bar
+;b 禁用现代风格搜索栏
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_DisableModernSearchBar"=dword:00000000
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b Shrink address bar height **
+;b 缩小地址栏高度 **
 "ShrinkExplorerAddressBar"=dword:00000000
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b Hide search bar completely **
+;b 完全隐藏搜索栏 **
 "HideExplorerSearchBar"=dword:00000000
 ;s Explorer_TitlebarSection !IsWindows11Version22H2OrHigher
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;c 4 Title bar
-;x 0 Show icon and title (default)
-;x 1 Hide title, show icon
-;x 2 Hide icon, show title
-;x 3 Hide icon and title
+;c 4 标题栏
+;x 0 显示图标和标题 (默认)
+;x 1 隐藏标题, 显示图标
+;x 2 隐藏图标, 显示标题
+;x 3 隐藏图标和标题
 "HideIconAndTitleInExplorer"=dword:00000000
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;c 3 Apply Mica effect on these areas
-;x 0 Let File Explorer decide (default)
-;x 1 Title bar, command bar and navigation bar
-;x 2 Nowhere
+;c 3 云母效果的区域
+;x 0 由资源管理器决定 (默认)
+;x 1 标题栏, 命令栏 和 导航栏
+;x 2 不使用
 "MicaEffectOnTitlebar"=dword:00000000
 ;g Explorer_TitlebarSection
 
 
 
-;T Start menu
+;T 开始菜单
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-;z 2 Start menu style
-;x 0 Windows 11 (default)
+;z 2 开始菜单风格
+;x 0 Windows 11 (默认)
 ;x 1 Windows 10
 "Start_ShowClassicMode"=dword:00000000
-;y More Start menu options in the Settings app 🡕
+;y 在Windows设置中修改开始菜单的设置 🡕
 ;ms-settings:personalization-start
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-;c 2 Position on screen
-;x 0 At screen edge
-;x 1 Center (default)
+;c 2 在屏幕上的位置
+;x 0 边缘
+;x 1 中央 (默认)
 "TaskbarAl"=dword:00000001
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;c 22 Maximum number of frequent apps to show
+;c 22 常用应用的最大显示数量
 ;x 0 None
 ;x 1 1
 ;x 2 2
 ;x 3 3
 ;x 4 4
 ;x 5 5
-;x 6 6 (default)
+;x 6 6 (默认)
 ;x 7 7
 ;x 8 8
 ;x 9 9
@@ -285,84 +285,84 @@
 ;x 99999 Unlimited
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_Start_MaximumFrequentApps"=dword:00000006
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\StartPage]
-;a When using multiple displays, open Start on this monitor when invoked using
+;a 按下Windows键，开始菜单弹出的显示器：
 ;c 10 the keyboard
-;x 1 Primary monitor (default)
-;x 0 Monitor on which the cursor is on
-;x 2 Monitor #2
-;x 3 Monitor #3
-;x 4 Monitor #4
-;x 5 Monitor #5
-;x 6 Monitor #6
-;x 7 Monitor #7
-;x 8 Monitor #8
-;x 9 Monitor #9
+;x 1 主显示器 (默认)
+;x 0 焦点所在的显示器
+;x 2 显示器 #2
+;x 3 显示器 #3
+;x 4 显示器 #4
+;x 5 显示器 #5
+;x 6 显示器 #6
+;x 7 显示器 #7
+;x 8 显示器 #8
+;x 9 显示器 #9
 "MonitorOverride"=dword:00000001
 ;s StartMenu_Windows11 !IsWindows10StartMenu
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b Disable the "Recommended" section
+;b 禁用"推荐的应用"
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_StartDocked_DisableRecommendedSection"=dword:00000000
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\StartPage]
-;b Open Start in All apps by default
+;b 在打开开始菜单时显示所有应用
 "MakeAllAppsDefault"=dword:00000000
 ;g StartMenu_Windows11
 ;s StartMenu_Windows10 IsWindows10StartMenu
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b Show more tiles
+;b 显示更多磁贴
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_StartUI_ShowMoreTiles"=dword:00000000
-;c 3 Corner preference
-;x 1 Rounded corners, floating menu
-;x 2 Rounded corners, docked menu
-;x 0 Not rounded
+;c 3 圆角偏好
+;x 1 圆角, 浮动的菜单
+;x 2 圆角, 停靠的菜单
+;x 0 禁用圆角
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_StartUI_EnableRoundedCorners"=dword:00000000
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;c 3 Display mode
-;x 0 Default
-;x 1 Start menu
-;x 2 Full screen Start
+;c 3 显示模式
+;x 0 默认
+;x 1 开始菜单
+;x 2 全屏
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_ForceStartSize"=dword:00000000
-;c 3 App list
-;x 0 Display
-;x 3 Hide
-;x 1 Disable 
+;c 3 应用列表
+;x 0 显示
+;x 3 隐藏
+;x 1 禁用 
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_NoStartMenuMorePrograms"=dword:00000000
-;u Pin tiles to Windows 10 Start menu from File Explorer
+;u 通过资源管理器向Windows10开始菜单添加磁贴
 ;pin_tiles
 ;g StartMenu_Windows10
 
 
 
-;T Window switcher
+;T 窗口切换
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
-;z 4 Window switcher (Alt+Tab) style *
-;x 0 Windows 11 (default)
+;z 4 窗口切换风格 (Alt+Tab) *
+;x 0 Windows 11 (默认)
 ;x 3 Windows 10
 ;x 1 Windows NT
-;x 2 Simple Window Switcher
+;x 2 自定义切换风格(Simple Window Switcher)
 "AltTabSettings"=dword:00000000
 ;s WindowSwitcher_SWS IsSWSEnabled
 [HKEY_CURRENT_USER\Software\ExplorerPatcher\sws]
-;b Include desktop
+;b 切换到桌面
 "IncludeWallpaper"=dword:00000001
-;b Always show on primary monitor
+;b 始终在主显示器上显示
 "PrimaryOnly"=dword:00000000
-;b Show windows only from current monitor
+;b 只显示当前显示器中的窗口
 "PerMonitor"=dword:00000000
-;b Display only the most recent window (per application switcher)
+;b 只显示最近使用的窗口 (合并相同应用窗口)
 "SwitcherIsPerApplication"=dword:00000000
 ;b %PLACEHOLDER_0001%
 "NoPerApplicationList"=dword:00000000
-;c 3 Theme
-;x 0 Default
+;c 3 主题
+;x 0 默认
 ;x 1 Acrylic
-;x 2 Mica (always opaque)
+;x 2 Mica (不透明)
 "Theme"=dword:00000000
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MultitaskingView\AltTabViewHost]
-;c 19 Opacity
+;c 19 不透明度
 ;x 100 Opaque
 ;x 98 98 %
 ;x 96 96 %
-;x 95 95 % (default)
+;x 95 95 % (默认)
 ;x 94 94 %
 ;x 92 92 %
 ;x 90 90 %
@@ -380,19 +380,19 @@
 ;x 30 30 %
 "Grid_backgroundPercent"=dword:0000005F
 [HKEY_CURRENT_USER\Software\ExplorerPatcher\sws]
-;c 3 Color scheme
-;x 0 Follow system setting (default)
-;x 1 Light
-;x 2 Dark
+;c 3 配色方案
+;x 0 跟随系统 (默认)
+;x 1 亮色
+;x 2 暗色
 "ColorScheme"=dword:00000000
 [HKEY_CURRENT_USER\Software\ExplorerPatcher\sws]
-;c 3 Corner preference
-;x 2 Rounded (default)
-;x 3 Small rounded
-;x 1 Not rounded
+;c 3 圆角偏好
+;x 2 圆角 (默认)
+;x 3 小圆角
+;x 1 禁用
 "CornerPreference"=dword:00000002
 [HKEY_CURRENT_USER\Software\ExplorerPatcher\sws]
-;c 20 Row height
+;c 20 行高
 ;x 330 330 pt
 ;x 320 320 pt
 ;x 310 310 pt
@@ -403,7 +403,7 @@
 ;x 260 260 pt
 ;x 250 250 pt
 ;x 240 240 pt
-;x 230 230 pt (default)
+;x 230 230 pt (默认)
 ;x 220 220 pt
 ;x 210 210 pt
 ;x 200 200 pt
@@ -414,49 +414,49 @@
 ;x 150 150 pt
 ;x 140 140 pt
 "RowHeight"=dword:000000e6
-;c 10 Maximum width (percentage of screen width)
-;x 100 100 % (not recommended)
+;c 10 最大宽度 (屏宽百分比)
+;x 100 100 % (不推荐)
 ;x 95 95 %
 ;x 90 90 %
 ;x 85 85 %
-;x 80 80 % (default)
+;x 80 80 % (默认)
 ;x 75 75 %
 ;x 70 70 %
 ;x 65 65 %
 ;x 60 60 %
 ;x 55 55 %
 "MaxWidth"=dword:00000050
-;c 10 Maximum height (percentage of screen height)
-;x 100 100 % (not recommended)
+;c 10 最大高度 (屏高百分比)
+;x 100 100 % (不推荐)
 ;x 95 95 %
 ;x 90 90 %
 ;x 85 85 %
-;x 80 80 % (default)
+;x 80 80 % (默认)
 ;x 75 75 %
 ;x 70 70 %
 ;x 65 65 %
 ;x 60 60 %
 ;x 55 55 %
 "MaxHeight"=dword:00000050
-;c 11 Window padding
+;c 11 窗口边距
 ;x 50 50 pt
 ;x 45 45 pt
 ;x 40 40 pt
 ;x 35 30 pt
 ;x 30 30 pt
 ;x 25 25 pt
-;x 20 20 pt (default)
+;x 20 20 pt (默认)
 ;x 15 15 pt
 ;x 10 10 pt
 ;x 5 5 pt
 ;x 0 None
 "MasterPadding"=dword:00000014
-;c 11 Show delay
+;c 11 显示延迟
 ;x 0 None
 ;x 25 25 ms
 ;x 50 50 ms
 ;x 75 75 ms
-;x 100 100 ms (default)
+;x 100 100 ms (默认)
 ;x 125 125 ms
 ;x 150 150 ms
 ;x 200 200 ms
@@ -465,78 +465,78 @@
 ;x 500 500 ms
 "ShowDelay"=dword:00000064
 ;q
-;y Learn more about Simple Window Switcher 🡕
+;y 了解Simple Window Switcher 🡕
 ;https://github.com/valinet/ExplorerPatcher/wiki/Simple-Window-Switcher
 ;g WindowSwitcher_SWS
 
 
 
 ;s Weather_Windows10 IsOldTaskbar
-;T Weather
+;T 天气
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b Show Weather on the taskbar
+;b 在任务栏显示天气
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_PeopleBand"=dword:00000000
 ;s Weather_Section1 IsWeatherEnabled
-;w Location
-;Search City or Zip Code; the program looks up "weather in /* what you typed */" on Google. Leave blank for the default value (current location).
-;Current location (default)
+;w 位置
+;搜索城市或邮政编码，此值将会在谷歌中进行搜索，留空时为默认值"Current location"
+;Current location (默认)
 "WeatherLocation"=""
-;c 5 Layout
-;x 0 Icon and description (default)
-;x 3 Icon and temperature
-;x 1 Icon only
-;x 4 Temperature only
-;x 5 Temperature and description
+;c 5 布局设置
+;x 0 图标和详细文本 (默认)
+;x 3 图标和温度
+;x 1 只有图标
+;x 4 只有温度
+;x 5 温度和详细文版
 "WeatherViewMode"=dword:00000000
-;c 3 Widget size
-;x 0 Automatic (fit contents) (default)
-;x 2 Automatic (fit contents) with threshold
-;x 1 Fixed
+;c 3 部件大小
+;x 0 自动 (自适应) (默认)
+;x 2 带有限制的自动 (自适应) 
+;x 1 固定大小
 "WeatherFixedSize"=dword:00000000
-;c 2 Widget position
-;x 0 Right / bottom (default)
-;x 1 Left / top
+;c 2 部件位置
+;x 0 右侧 / 底部 (默认)
+;x 1 左侧 / 顶部
 "WeatherToLeft"=dword:00000000
-;c 7 Update frequency
-;x 60 Every minute
-;x 300 Every 5 minutes
-;x 900 Every 15 minutes
-;x 1200 Every 20 minutes (default)
-;x 1800 Every half an hour
-;x 3600 Every hour
-;x 7200 Every couple of hours
+;c 7 更新频率
+;x 60 每分钟
+;x 300 每5分钟
+;x 900 每15分钟
+;x 1200 每20分钟 (默认)
+;x 1800 每半小时
+;x 3600 每小时
+;x 7200 每两小时
 "WeatherContentUpdateMode"=dword:000004B0
-;c 2 Temperature unit
-;x 0 Celsius (default)
-;x 1 Fahrenheit
+;c 2 温度单位
+;x 0 摄氏度 (默认)
+;x 1 华氏度
 "WeatherTemperatureUnit"=dword:00000000
-;;;c 2 Location accuracy
-;;;x 0 Generic (based on the IP address) (default)
-;;;x 1 Precise (geolocation)
+;;;c 2 定位方法
+;;;x 0 通用 (使用IP地址) (默认)
+;;;x 1 精确 (地理位置)
 ;;"WeatherLocationType"=dword:00000000
-;w Language
-;Type the short code for the language you'd like the weather data to be displayed in. For example, try "en", "ro", "de", "fr" etc. Leave blank for the default value (language of the Windows OS).
-;System language (default)
+;w 语言
+;输入你所想要的天气数据语言的语言代码. 例如: "en", "ro", "de", "fr" ... .留空时为默认值"System language"
+;System language (默认)
 "WeatherLanguage"=""
-;c 3 Color scheme
-;x 0 Follow system setting (default)
-;x 1 Light
-;x 2 Dark
+;c 3 配色方案
+;x 0 跟随系统 (默认)
+;x 1 亮色
+;x 2 暗色
 "WeatherTheme"=dword:00000000
-;c 3 Corner preference
-;x 2 Rounded (default)
-;x 3 Small rounded
-;x 1 Not rounded
+;c 3 圆角偏好
+;x 2 圆角 (默认)
+;x 3 小圆角
+;x 1 禁用
 "WeatherWindowCornerPreference"=dword:00000002
-;c 2 Icon pack
-;x 0 Microsoft (default)
-;x 1 Google
+;c 2 图标类型
+;x 0 微软 (默认)
+;x 1 谷歌
 "WeatherIconPack"=dword:00000000
-;c 2 Display widget contents
-;x 0 On a single line (default)
-;x 1 On 2 lines, if possible
+;c 2 内容
+;x 0 单行显示 (默认)
+;x 1 如果可以，双行
 "WeatherContentsMode"=dword:00000000
-;c 17 Zoom
+;c 17 缩放
 ;x 25 25 %
 ;x 33 33 %
 ;x 50 50 %
@@ -544,7 +544,7 @@
 ;x 75 75 %
 ;x 80 80 %
 ;x 90 90 %
-;x 0 100 % (default)
+;x 0 100 % (默认)
 ;x 110 110 %
 ;x 125 125 %
 ;x 150 150 %
@@ -557,13 +557,13 @@
 "WeatherZoomFactor"=dword:00000000
 ;q
 ;g Weather_Section1
-;y Learn more about the Weather taskbar widget 🡕
+;y 了解任务栏天气部件 🡕
 ;https://github.com/valinet/ExplorerPatcher/wiki/Weather
 ;s Weather_Section2 IsWeatherEnabled
 ;t %WEATHERLASTUPDATETEXT%
-;u Update weather now
+;u 现在就更新天气
 ;update_weather
-;u Clear weather widget local data
+;u 清除本地的天气数据
 ;clear_data_weather
 ;g Weather_Section2
 ;g Weather_Windows10
@@ -572,32 +572,32 @@
 
 ;s Spotlight_SpotlightOSCheck DoesOSBuildSupportSpotlight
 ;s Spotlight_SpotlightEnabledCheck IsSpotlightEnabled
-;T Spotlight
+;T Windows聚焦
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b Hide the "Learn about this picture" icon
+;b 隐藏"了解此图片"的图标
 "SpotlightDisableIcon"=dword:00000000
-;c 8 Desktop context menu items
-;x 0 No items
-;x 32 Switch to the next picture
-;x 48 Learn about and switch to next picture
-;x 288 Info and switch to next picture
-;x 800 Info, copyright, and switch to next picture
-;x 304 Info, learn about, and switch to next picture
-;x 816 Info, copyright, learn about, and switch to next picture
-;x 1008 All items
+;c 8 桌面右键菜单选项
+;x 0 禁用
+;x 32 切换到下一张图片
+;x 48 了解此图片，切换到下一张图片
+;x 288 图片信息，切换到下一张图片
+;x 800 图片信息，版权信息，切换到下一张图片
+;x 304 图片信息, 了解此图片, 切换到下一张图片
+;x 816 图片信息, 版权信息, 了解此图片, 切换到下一张图片
+;x 1008 所有选项
 "SpotlightDesktopMenuMask"=dword:00000000
-;c 11 Update frequency
-;x 0 Let Windows decide the best schedule (default)
-;x 60 Every minute
-;x 300 Every 5 minutes
-;x 900 Every 15 minutes
-;x 1200 Every 20 minutes
-;x 1800 Every half an hour
-;x 3600 Every hour
-;x 7200 Every couple of hours
-;x 21600 Every 6 hours
-;x 43200 Every 12 hours
-;x 86400 Once a day
+;c 11 更新频率
+;x 0 让系统决定更新时间 (默认)
+;x 60 每分钟
+;x 300 每5分钟
+;x 900 每15分钟
+;x 1200 每20分钟
+;x 1800 每半小时
+;x 3600 每小时
+;x 7200 每两小时
+;x 21600 每6小时
+;x 43200 每12小时
+;x 86400 每天
 "SpotlightUpdateSchedule"=dword:00000000
 ;u %SPOTLIGHTCLICK%
 ;spotlight_click
@@ -609,7 +609,7 @@
 ;spotlight_like
 ;u %SPOTLIGHTDISLIKE%
 ;spotlight_dislike
-;;;u Show more options
+;;;u 显示更多选项
 ;;;spotlight_menu
 ;g Spotlight_SpotlightEnabledCheck
 ;g Spotlight_SpotlightOSCheck
@@ -617,170 +617,173 @@
 
 
 
-;T Other
+;T 其他
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b Remember last used section in this window
+;b 记住此窗口最后的使用部分
 "LastSectionInProperties"=dword:00000000
-;b Open clock flyout when pressing Win+C instead of Microsoft Teams *
+;b 按下 Win+C 时打开时钟而不是Microsoft Teams *
 "ClockFlyoutOnWinC"=dword:00000000
-;b Show separators between taskbar toolbars *
+;b 显示任务栏和工具栏的分隔符 *
 "ToolbarSeparators"=dword:00000000
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b Add shortcut to program settings in Win+X menu
+;b 在 Win+X 菜单中加入进入该应用的快捷方式
 "PropertiesInWinX"=dword:00000000
-;b Remove shortcut key from program settings item in Win+X menu
+;b 在 Win+X 菜单中移除应用设置的快捷方式
 "NoMenuAccelerator"=dword:00000000
-;b Disable Office hotkeys (Ctrl+Alt+Shift+Windows key combinations) *
+;b 禁用Office组合键 (Ctrl+Alt+Shift+Windows) *
 "DisableOfficeHotkeys"=dword:00000000
-;b Disable Win+F (Feedback Hub) hotkey *
+;b 禁用 Win+F 组合键 (反馈中心) *
 "DisableWinFHotkey"=dword:00000000
-;b Disable rounded corners for application windows
+;b 禁用圆角窗口
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_DisableRoundedCorners"=dword:00000000
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b Disable quadrants when snapping windows *
+;b 贴靠窗口时禁用四象限贴靠 *
 "DisableAeroSnapQuadrants"=dword:00000000
 ;s Other_SnapAssistStyle !IsWindows11Version22H2OrHigher
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;c 2 Snap Assist style
-;x 0 Windows 11 (default)
+;c 2 窗口贴靠助手风格
+;x 0 Windows 11 (默认)
 ;x 3 Windows 10
 "SnapAssistSettings"=dword:00000000
 ;g Other_SnapAssistStyle
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-;c 6 Default action in the Alt+F4 dialog on the desktop
-;x 256 Switch user
-;x 1 Sign out
-;x 16 Sleep
-;x 64 Hibernate
-;x 2 Shut down (default)
-;x 4 Restart
+;c 6 在桌面按下 Alt+F4 时的默认操作
+;x 256 切换用户
+;x 1 注销
+;x 16 睡眠
+;x 64 休眠
+;x 2 关机 (默认)
+;x 4 重启
 "Start_PowerButtonAction"=dword:00000002
-;t Prevent the following Control Panel links from being redirected to the Settings app:
+;t 防止以下控制面板链接被重定向到设置应用程序：
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b System / About page
+;b 系统
 "DoNotRedirectSystemToSettingsApp"=dword:00000000
-;b Programs and Features
+;b 程序和功能
 "DoNotRedirectProgramsAndFeaturesToSettingsApp"=dword:00000000
-;b Adjust date/time
+;b 日期和时间
 "DoNotRedirectDateAndTimeToSettingsApp"=dword:00000000
-;b Customize notification icons
+;b 自定义通知图标
 "DoNotRedirectNotificationIconsToSettingsApp"=dword:00000000
 
 
 
-;T Updates
+;T 更新
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;z 3 When File Explorer starts
-;x 1 Notify about available updates (default)
-;x 0 Prompt to install available updates
-;x 2 Do not check for updates
+;z 3 当资源管理器启动时
+;x 1 通知可用更新 (默认)
+;x 0 提示有可用更新安装
+;x 2 不检查更新
 "UpdatePolicy"=dword:00000001
-;b Receive pre-release versions, if available (not recommended)
+;b 接收预发布版本 (不推荐)
 "UpdatePreferStaging"=dword:00000000
-;b Suggest the latest version on the server, even if it's older (not recommended)
+;b 使用服务器上的latest版本(可能是旧版本) (不推荐)
 "UpdateAllowDowngrades"=dword:00000000
-;t Update servers:
+;t 更新服务器:
 ;w Releases
-;Type a URL that serves resources adhering to GitHub's releases API. To learn how to configure your own update server, please consult the wiki.
+;输入可以调用GitHub releases API的URL. 要了解如何配置自己的更新服务器，请查阅 wiki.
 ;github.com/valinet/ExplorerPatcher/releases/latest
 "UpdateURL"=""
 ;w Pre-releases
-;Type a URL that serves resources adhering to GitHub's pre-releases API. To learn how to configure your own update server, please consult the wiki.
+;输入可以调用GitHub pre-releases API的URL. 要了解如何配置自己的更新服务器，请查阅 wiki.
 ;api.github.com/repos/valinet/ExplorerPatcher/releases?per_page=1
 "UpdateURLStaging"=""
-;y Check for updates
+;y 检查更新
 ;;;EP_CHECK_FOR_UPDATES
-;y Update program and restart File Explorer
+;y 更新并重启资源管理器
 ;;;EP_INSTALL_UPDATES
-;y Read about changes in the latest releases 🡕
+;y 更新日志 🡕
 ;https://github.com/valinet/ExplorerPatcher/blob/master/CHANGELOG.md
-;y Learn more 🡕
+;y 了解更多 🡕
 ;https://github.com/valinet/ExplorerPatcher/wiki/Configure-updates
 
 
-;T Advanced
-;e Only change these settings after reading the documentation about them.
-;y Learn more 🡕
-;https://github.com/valinet/ExplorerPatcher/wiki/About-advanced-settings
+;T 高级
+;e 请在阅读文档后再去修改这些设置.
+;y 阅读文档 🡕
+;https://github.com/valinet/ExplorerPatcher/wiki/About-advanced-settings 
 ;q
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b Enable console
+;b 启用资源管理器控制台
 "AllocConsole"=dword:00000000
-;b Dump memory leaks
+;b 转储内存泄漏
 "Memcheck"=dword:00000000
-;b Double click taskbar to toggle auto-hide (only works when the taskbar is locked) 
+;b 双击任务栏使任务栏隐藏 (只在任务栏锁定时有效) 
 "TaskbarAutohideOnDoubleClick"=dword:00000000
 [HKEY_CURRENT_USER\Control Panel\Desktop]
-;b Show Windows build info on the desktop *
+;b 在桌面显示Windows构建信息 *
 "PaintDesktopVersion"=dword:00000000
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b Enable advanced mitigations for correct rendering using classic theme *
+;b 启用高级缓冲以适配经典主题 *
 "ClassicThemeMitigations"=dword:00000000
 [-HKEY_CURRENT_USER\Software\Classes\CLSID\{1eeb5b5a-06fb-4732-96b3-975c0194eb39}\InprocServer32]
-;d Enable SysListView32 for Explorer views *
+;d 在资源管理器文件视图中启用SysListView32控件(旧版) *
 @=""
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
-;b Hide the program settings item ("Properties") from the taskbar context menu
+;b 在任务栏右键菜单中隐藏此应用的 "属性" 选项
 "NoPropertiesInContextMenu"=dword:00000000
-;b Enable symbols download *
+;b 下载符号文件 *
 "EnableSymbolDownload"=dword:00000001
 ;s Advanced_Windows10 IsOldTaskbar
-;b Pinned items act as quick launch (don't group pinned items with active apps) *
+;b 使用固定项目作为快速启动 (不将固定和活动的应用分组) *
 "PinnedItemsActAsQuickLaunch"=dword:00000000
-;b When the taskbar shows button labels, remove the extra gap around pinned items *
+;b 当任务栏显示按钮标签时，移除固定项的额外周围间隙 *
 "RemoveExtraGapAroundPinnedItems"=dword:00000000
 ;g Advanced_Windows10
-;c 12 Supplementary delay at logon *
-;x 0 None (default)
+;c 12 登录延迟 *
+;x 0 无 (默认)
 ;x 300 300 ms
 ;x 600 600 ms
-;x 1000 1 second
-;x 1500 1.5 seconds
-;x 2000 2 seconds
-;x 3000 3 seconds
-;x 4000 4 seconds
-;x 5000 5 seconds
-;x 6000 6 seconds
-;x 8000 8 seconds
-;x 10000 10 seconds
+;x 1000 1 s
+;x 1500 1.5 s
+;x 2000 2 s
+;x 3000 3 s
+;x 4000 4 s
+;x 5000 5 s
+;x 6000 6 s
+;x 8000 8 s
+;x 10000 10 s
 "ExplorerReadyDelay"=dword:00000000
 
 
 
-;T About
+;T 关于
 ;e ExplorerPatcher
-;e Version %VERSIONINFORMATIONSTRING%
-;t © 2006-2022 VALINET Solutions SRL. All rights reserved.
+;e 版本 %VERSIONINFORMATIONSTRING%
+;t © 2006-2022 VALINET Solutions SRL. 版权所有.
 ;e 
-;e This project aims to enhance the working environment on Windows.
-;e Proudly engineered by Valentin-Gabriel Radu.
-;t Running on Windows 11, OS Build %OSVERSIONSTRING%
-;y Visit project GitHub (https://github.com/valinet) 🡕
+;e 该项目旨在增强 Windows 上的工作环境.
+;e 由 Valentin-Gabriel Radu 强力开发.
+;e 由 Yukari316 激情汉化.
+;t 系统版本 Windows 11, OS Build %OSVERSIONSTRING%
+;y GitHub项目 (https://github.com/valinet) 🡕
 ;https://github.com/valinet
 ;q
-;y Visit web site (https://www.valinet.ro) 🡕
+;y 官网 (https://www.valinet.ro) 🡕
 ;https://www.valinet.ro
-;y E-mail author (valentingabrielradu@gmail.com) 🡕
+;y E-mail (valentingabrielradu@gmail.com) 🡕
 ;mailto:valentingabrielradu@gmail.com
-;y Donate (using PayPal) 🡕
+;y 赞助 (用PayPal) 🡕
 ;https://www.paypal.com/donate?business=valentingabrielradu%40gmail.com&no_recurring=0&item_name=ExplorerPatcher&currency_code=EUR
-;y Frequently Asked Questions 🡕
+;y Q&A 常用问题 🡕
 ;https://github.com/valinet/ExplorerPatcher/wiki/Frequently-asked-questions
-;y Learn more managing these settings 🡕
+;y 了解有关设置的更多说明 🡕
 ;https://github.com/valinet/ExplorerPatcher/wiki/Settings-management
-;u Import settings
+;y 汉化作者 🡕
+;https://github.com/Yukari316
+;u 导入设置
 ;import
-;u Export current settings
+;u 导出当前设置
 ;export
-;u Restore default settings
+;u 恢复默认设置
 ;reset
 
 
 
 ;f
-;u Restart File Explorer (*)
+;u 重启资源管理器 (*)
 ;restart
-;;u Restore default settings
+;;u 恢复默认设置
 ;;reset
-;;u About ExplorerPatcher
+;;u 关于 ExplorerPatcher
 ;;about

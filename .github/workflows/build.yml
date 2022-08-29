@@ -9,14 +9,7 @@ name: Build
 on:
   push:
     branches:
-      - '**'
-    tags-ignore:
-      - '**'
-  pull_request:
-    branches:
-      - '**'
-    tags-ignore:
-      - '**'
+      - 'master'
   workflow_dispatch:
     inputs:
       ref:
