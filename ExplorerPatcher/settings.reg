@@ -285,10 +285,9 @@
 ;x 99999 Unlimited
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_Start_MaximumFrequentApps"=dword:00000006
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\StartPage]
-;a 按下Windows键，开始菜单弹出的显示器：
-;c 10 the keyboard
+;c 10 按下Windows键，开始菜单弹出的显示器
 ;x 1 主显示器 (默认)
-;x 0 焦点所在的显示器
+;x 0 鼠标所在的显示器
 ;x 2 显示器 #2
 ;x 3 显示器 #3
 ;x 4 显示器 #4
@@ -769,7 +768,7 @@
 ;https://github.com/valinet/ExplorerPatcher/wiki/Frequently-asked-questions
 ;y 了解有关设置的更多说明 🡕
 ;https://github.com/valinet/ExplorerPatcher/wiki/Settings-management
-;y 汉化作者 🡕
+;y 汉化作者 (https://github.com/Yukari316)🡕
 ;https://github.com/Yukari316
 ;u 导入设置
 ;import
