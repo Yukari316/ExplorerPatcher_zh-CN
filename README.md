@@ -3,15 +3,17 @@
 
 给原作者赞助PayPal: [here](https://www.paypal.com/donate?business=valentingabrielradu%40gmail.com&no_recurring=0&item_name=ExplorerPatcher&currency_code=EUR) ，邮箱 valentingabrielradu@gmail.com
 
-![Build status](https://github.com/valinet/ExplorerPatcher/actions/workflows/build.yml/badge.svg)
+![Build status](https://github.com/Yukari316/ExplorerPatcher_zh-CN/actions/workflows/build.yml/badge.svg)
 
 此为我对gui进行翻译并适配字符后的汉化版本，目前只汉化了在`Windows 11`系统下运行的GUI文本，`Windows 10`环境暂无计划进行汉化
 
-以下为原repo的英文原文
-
 ## 如何使用
 
-> **⚠⚠安装过程中将会终止`Windows资源管理器(explorer.exe)`的运行，显示器上不会显示任何画面（包括桌面）⚠⚠**
+> ⚠⚠⚠⚠
+> 
+> **安装过程中将会终止`Windows资源管理器(explorer.exe)`的运行，显示器上不会显示任何画面（包括桌面）**
+> 
+> ⚠⚠⚠⚠
 
 1. 在releases中下载最新的版本（或预发布版本） [ep_setup.exe](https://github.com/Yukari316/ExplorerPatcher_zh-CN/releases/).
 
@@ -21,7 +23,7 @@
 
 4. 需要修改设置选项，右键任务栏并选择“属性”选项进行修改。
 
-That's it. It's that simple.
+# 以下为原repo的英文原文
 
 # ExplorerPatcher
 This project aims to enhance the working environment on Windows.
