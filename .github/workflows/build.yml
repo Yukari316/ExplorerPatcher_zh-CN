@@ -6,11 +6,30 @@
 
 name: Build
 
+name: Build
+
 on:
   push:
-    branches: [ "master" ]
+    branches:
+      - '**'
+    tags-ignore:
+      - '**'
   pull_request:
-    branches: [ "master" ]
+    branches:
+      - '**'
+    tags-ignore:
+      - '**'
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: 'Commit'
+        required: true
+      config:
+        description: 'Configuration'
+        required: false
+      build_dir:
+        description: 'Build dir'
+        required: false
 
 env:
   SOLUTION_FILE_PATH: .
