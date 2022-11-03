@@ -261,7 +261,7 @@
 "TaskbarAl"=dword:00000001
 [HKEY_CURRENT_USER\Software\ExplorerPatcher]
 ;c 22 常用应用的最大显示数量
-;x 0 None
+;x 0 0
 ;x 1 1
 ;x 2 2
 ;x 3 3
@@ -282,7 +282,7 @@
 ;x 18 18
 ;x 19 19
 ;x 20 20
-;x 99999 Unlimited
+;x 99999 无限
 ;"Virtualized_{D17F1E1A-5919-4427-8F89-A1A8503CA3EB}_Start_MaximumFrequentApps"=dword:00000006
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\StartPage]
 ;c 10 按下Windows键，开始菜单弹出的显示器
@@ -358,7 +358,7 @@
 "Theme"=dword:00000000
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MultitaskingView\AltTabViewHost]
 ;c 19 不透明度
-;x 100 Opaque
+;x 100 不透明
 ;x 98 98 %
 ;x 96 96 %
 ;x 95 95 % (默认)
