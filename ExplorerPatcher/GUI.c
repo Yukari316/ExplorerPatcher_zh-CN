@@ -1997,7 +1997,7 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                                         GUI_Build(0, hwnd, pt);
                                         fclose(AuditFile);
                                         AuditFile = NULL;
-                                        MessageBoxW(hwnd, L"Settings have been exported successfully.", GUI_title, MB_ICONINFORMATION);
+                                        MessageBoxW(hwnd, Utf8Text("设置已成功导出"), GUI_title, MB_ICONINFORMATION);
                                     }
                                 }
                             }
@@ -2200,10 +2200,7 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                             {
                                 if (MessageBoxW(
                                     hwnd,
-                                    L"Are you sure you want to permanently clear the weather widget's local data?\n\n"
-                                    L"This will reset the internal components to their default state, but will preserve "
-                                    L"your preferences. This may fix the widget not loading the data properly, or "
-                                    L"having layout issues etc.",
+                                    Utf8Text("这会让内部组件重置为默认状态，并保留您的设置项。\n\n这样有概率修复小部件不能加载数据或布局错误等问题"),
                                     _T(PRODUCT_NAME),
                                     MB_ICONQUESTION | MB_YESNO) == IDYES)
                                 {
@@ -2217,7 +2214,7 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                                         PleaseWaitCallbackData = &res;
                                         PleaseWaitCallbackFunc = GUI_Internal_DeleteWeatherFolder;
                                         PleaseWaitHook = SetWindowsHookExW(WH_CALLWNDPROC, PleaseWait_HookProc, NULL, GetCurrentThreadId());
-                                        MessageBoxW(hwnd, L"Please wait...", _T(PRODUCT_NAME), 0);
+                                        MessageBoxW(hwnd, Utf8Text("请稍等..."), _T(PRODUCT_NAME), 0);
                                     }
                                     else
                                     {
@@ -2225,13 +2222,13 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                                     }
                                     if (res == IDOK)
                                     {
-                                        MessageBoxW(hwnd, L"Weather widget data cleared successfully.", _T(PRODUCT_NAME), MB_ICONINFORMATION);
+                                        MessageBoxW(hwnd, Utf8Text("天气小部件数据已成功清除"), _T(PRODUCT_NAME), MB_ICONINFORMATION);
                                     }
                                     else
                                     {
                                         if (res == IDABORT)
                                         {
-                                            MessageBoxW(hwnd, L"An error has occured while clearing the data.", _T(PRODUCT_NAME), MB_ICONERROR);
+                                            MessageBoxW(hwnd, Utf8Text("在清理数据时发生错误"), _T(PRODUCT_NAME), MB_ICONERROR);
                                         }
                                     }
                                     if (dwData)
@@ -3218,11 +3215,11 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                                 }
                                 if (dwTypeRepl == 1)
                                 {
-                                    swprintf_s(accText, 1000, accText2, L" - Requires registration as shell extension to work in Open or Save file dialogs - ");
+                                    swprintf_s(accText, 1000, accText2, Utf8Text(" - 需要注册为外壳扩展以在<打开>或<保存>对话框中启用 - "));
                                 }
                                 else
                                 {
-                                    swprintf_s(accText, 1000, accText2, L" - Requires File Explorer restart to apply - ");
+                                    swprintf_s(accText, 1000, accText2, L" - 需要重启资源管理器以启用 - ");
                                 }
                                 //wprintf(L">>> %s\n", accText);
                                 SetWindowTextW(_this->hAccLabel, accText);
@@ -3320,7 +3317,7 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
             swprintf_s(
                 wszAccText,
                 100,
-                L"Selected page: %s: %d of %d.",
+                Utf8Text("选择的页面:%s (%d/%d)"),
                 _this->sectionNames[_this->section],
                 _this->section + 1,
                 max_section + 1
