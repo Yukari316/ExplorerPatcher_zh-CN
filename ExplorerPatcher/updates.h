@@ -26,9 +26,9 @@ extern HMODULE hModule;
 #define UPDATES_BUFSIZ 10240
 #define UPDATES_DEFAULT_TIMEOUT 600
 
-#define UPDATES_RELEASE_INFO_URL          "https://github.com/valinet/ExplorerPatcher"
-#define UPDATES_RELEASE_INFO_URL_STABLE   "https://github.com/valinet/ExplorerPatcher/releases/latest"
-#define UPDATES_RELEASE_INFO_URL_STAGING  "https://api.github.com/repos/valinet/ExplorerPatcher/releases?per_page=1"
+#define UPDATES_RELEASE_INFO_URL          "https://github.com/Yukari316/ExplorerPatcher_zh-CN"
+#define UPDATES_RELEASE_INFO_URL_STABLE   "https://github.com/Yukari316/ExplorerPatcher_zh-CN/releases/latest"
+#define UPDATES_RELEASE_INFO_URL_STAGING  "https://github.com/Yukari316/ExplorerPatcher_zh-CN/releases?per_page=1"
 
 typedef struct IsUpdateAvailableParameters
 {

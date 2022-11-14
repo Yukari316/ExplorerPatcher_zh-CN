@@ -686,11 +686,11 @@
 ;t 更新服务器:
 ;w Releases
 ;输入可以调用GitHub releases API的URL. 要了解如何配置自己的更新服务器，请查阅 wiki.
-;github.com/valinet/ExplorerPatcher/releases/latest
+;github.com/Yukari316/ExplorerPatcher_zh-CN/releases/latest
 "UpdateURL"=""
 ;w Pre-releases
 ;输入可以调用GitHub pre-releases API的URL. 要了解如何配置自己的更新服务器，请查阅 wiki.
-;api.github.com/repos/valinet/ExplorerPatcher/releases?per_page=1
+;api.github.com/repos/Yukari316/ExplorerPatcher_zh-CN/releases?per_page=1
 "UpdateURLStaging"=""
 ;y 检查更新
 ;;;EP_CHECK_FOR_UPDATES
