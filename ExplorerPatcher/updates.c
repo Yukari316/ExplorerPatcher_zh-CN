@@ -545,7 +545,7 @@ BOOL IsUpdateAvailableHelper(
                                 );
 
                                 WCHAR wszMsg[500];
-                                swprintf_s(wszMsg, 500, L"Would you like to install an update for " _T(PRODUCT_NAME) L"?\n\nDownloaded from:\n%s", wszURL2);
+                                swprintf_s(wszMsg, 500, Utf8Text("是否需要安装%s的更新?\n\n下载地址:\n%s"), PRODUCT_NAME, wszURL2);
                                 if (MessageBoxW(
                                     FindWindowW(L"ExplorerPatcher_GUI_" _T(EP_CLSID), NULL),
                                     wszMsg,
@@ -875,14 +875,14 @@ BOOL ShowUpdateSuccessNotification(
         L"activationType=\"protocol\" launch=\"" _T(UPDATES_RELEASE_INFO_URL) L"\" duration=\"short\">\r\n"
         L"	<visual>\r\n"
         L"		<binding template=\"ToastGeneric\">\r\n"
-        L"			<text><![CDATA[Update successful]]></text>\r\n"
-        L"			<text><![CDATA[Installed version: %d.%d.%d.%d]]></text>\r\n"
+        L"			<text><![CDATA[%s]]></text>\r\n"
+        L"			<text><![CDATA[%s: %d.%d.%d.%d]]></text>\r\n"
         L"			<text placement=\"attribution\"><![CDATA[ExplorerPatcher]]></text>\r\n"
         L"		</binding>\r\n"
         L"	</visual>\r\n"
         L"	<audio src=\"ms-winsoundevent:Notification.Default\" loop=\"false\" silent=\"false\"/>\r\n"
         L"</toast>\r\n";
-    swprintf_s(buf, TOAST_BUFSIZ, text, dwLeftMost, dwSecondLeft, dwSecondRight, dwRightMost);
+    swprintf_s(buf, TOAST_BUFSIZ, text, Utf8Text("更新成功"), Utf8Text("当前版本"), dwLeftMost, dwSecondLeft, dwSecondRight, dwRightMost);
     String2IXMLDocument(
         buf,
         wcslen(buf),
@@ -966,14 +966,14 @@ BOOL InstallUpdatesIfAvailable(
             L"activationType=\"protocol\" launch=\"" _T(UPDATES_RELEASE_INFO_URL) L"\" duration=\"long\">\r\n"
             L"	<visual>\r\n"
             L"		<binding template=\"ToastGeneric\">\r\n"
-            L"			<text><![CDATA[Downloading and installing updates]]></text>\r\n"
-            L"			<text><![CDATA[Installed version: %d.%d.%d.%d]]></text>\r\n"
+            L"			<text><![CDATA[%s]]></text>\r\n"
+            L"			<text><![CDATA[%s: %d.%d.%d.%d]]></text>\r\n"
             L"			<text placement=\"attribution\"><![CDATA[ExplorerPatcher]]></text>\r\n"
             L"		</binding>\r\n"
             L"	</visual>\r\n"
             L"	<audio src=\"ms-winsoundevent:Notification.Default\" loop=\"false\" silent=\"false\"/>\r\n"
             L"</toast>\r\n";
-        swprintf_s(buf, TOAST_BUFSIZ, text, dwLeftMost, dwSecondLeft, dwSecondRight, dwRightMost);
+        swprintf_s(buf, TOAST_BUFSIZ, text, Utf8Text("正在下载并安装更新..."), Utf8Text("当前版本"), dwLeftMost, dwSecondLeft, dwSecondRight, dwRightMost);
         String2IXMLDocument(
             buf,
             wcslen(buf),
@@ -1102,22 +1102,24 @@ BOOL InstallUpdatesIfAvailable(
                 L"activationType=\"protocol\" launch=\"%s\" duration=\"long\">\r\n"
                 L"	<visual>\r\n"
                 L"		<binding template=\"ToastGeneric\">\r\n"
-                L"			<text><![CDATA[%s available]]></text>\r\n"
-                L"			<text><![CDATA[You can update by right clicking the taskbar, choosing \"Properties\", then \"Updates\". Click here to learn more about this update.]]></text>\r\n"
+                L"			<text><![CDATA[%s %s]]></text>\r\n"
+                L"			<text><![CDATA[%s]]></text>\r\n"
                 L"			<text placement=\"attribution\"><![CDATA[ExplorerPatcher]]></text>\r\n"
                 L"		</binding>\r\n"
                 L"	</visual>\r\n"
                 L"	<audio src=\"ms-winsoundevent:Notification.Default\" loop=\"false\" silent=\"false\"/>\r\n"
                 L"</toast>\r\n";
+            LPWSTR available_chs = Utf8Text("可用");
+            LPWSTR update_guide = Utf8Text("您可以右键任务栏,选择\"属性\"后单击\"更新\"来进行更新. 单击了解更多更新信息.");
             if (!dwLeftMost)
             {
-                swprintf_s(buf, TOAST_BUFSIZ, text, wszInfoURL, L"New version");
+                swprintf_s(buf, TOAST_BUFSIZ, text, wszInfoURL, Utf8Text("新版本"), available_chs, update_guide);
             }
             else
             {
                 WCHAR wszVersionInfo[100];
-                swprintf_s(wszVersionInfo, 100, L"Version %d.%d.%d.%d is", dwLeftMost, dwSecondLeft, dwSecondRight, dwRightMost);
-                swprintf_s(buf, TOAST_BUFSIZ, text, wszInfoURL, wszVersionInfo);
+                swprintf_s(wszVersionInfo, 100, Utf8Text("当前版本: %d.%d.%d.%d"), dwLeftMost, dwSecondLeft, dwSecondRight, dwRightMost);
+                swprintf_s(buf, TOAST_BUFSIZ, text, wszInfoURL, wszVersionInfo, available_chs, update_guide);
             }
             __x_ABI_CWindows_CData_CXml_CDom_CIXmlDocument* inputXml = NULL;
             String2IXMLDocument(
