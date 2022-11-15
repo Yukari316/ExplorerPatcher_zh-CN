@@ -995,7 +995,7 @@ BOOL InstallUpdatesIfAvailable(
             L"	</visual>\r\n"
             L"	<audio src=\"ms-winsoundevent:Notification.Default\" loop=\"false\" silent=\"false\"/>\r\n"
             L"</toast>\r\n";
-        swprintf_s(buf, TOAST_BUFSIZ, text, Utf8Text("获取新版本中..."), Utf8Text("当前版本"), dwLeftMost, dwSecondLeft, dwSecondRight, dwRightMost);
+        swprintf_s(buf, TOAST_BUFSIZ, text, Utf8Text("获取更新中..."), Utf8Text("当前版本"), dwLeftMost, dwSecondLeft, dwSecondRight, dwRightMost);
         String2IXMLDocument(
             buf,
             wcslen(buf),
@@ -1055,16 +1055,17 @@ BOOL InstallUpdatesIfAvailable(
                         L"activationType=\"protocol\" launch=\"" _T(UPDATES_RELEASE_INFO_URL) L"\" duration=\"short\">\r\n"
                         L"	<visual>\r\n"
                         L"		<binding template=\"ToastGeneric\">\r\n"
-                        L"			<text><![CDATA[Update failed]]></text>\r\n"
-                        L"			<text><![CDATA[The request was declined or an error has occured when attempting to install this update.]]></text>\r\n"
+                        L"			<text><![CDATA[%s]]></text>\r\n"
+                        L"			<text><![CDATA[%s]]></text>\r\n"
                         L"			<text placement=\"attribution\"><![CDATA[ExplorerPatcher]]></text>\r\n"
                         L"		</binding>\r\n"
                         L"	</visual>\r\n"
                         L"	<audio src=\"ms-winsoundevent:Notification.Default\" loop=\"false\" silent=\"false\"/>\r\n"
                         L"</toast>\r\n";
+                    swprintf_s(buf, TOAST_BUFSIZ, text, Utf8Text("更新失败"), Utf8Text("更新请求被拒绝或在安装时发生错误"));
                     String2IXMLDocument(
-                        text,
-                        wcslen(text),
+                        buf,
+                        wcslen(buf),
                         &inputXml,
                         NULL
                     );
@@ -1118,7 +1119,7 @@ BOOL InstallUpdatesIfAvailable(
             else
             {
                 WCHAR wszVersionInfo[100];
-                swprintf_s(wszVersionInfo, 100, Utf8Text("当前版本: %d.%d.%d.%d"), dwLeftMost, dwSecondLeft, dwSecondRight, dwRightMost);
+                swprintf_s(wszVersionInfo, 100, Utf8Text("新版本: %d.%d.%d.%d"), dwLeftMost, dwSecondLeft, dwSecondRight, dwRightMost);
                 swprintf_s(buf, TOAST_BUFSIZ, text, wszInfoURL, wszVersionInfo, available_chs, update_guide);
             }
             __x_ABI_CWindows_CData_CXml_CDom_CIXmlDocument* inputXml = NULL;
@@ -1170,29 +1171,27 @@ BOOL InstallUpdatesIfAvailable(
                 L"activationType=\"protocol\" launch=\"" _T(UPDATES_RELEASE_INFO_URL) L"\" duration=\"short\">\r\n"
                 L"	<visual>\r\n"
                 L"		<binding template=\"ToastGeneric\">\r\n"
-                L"			<text><![CDATA[No updates are available]]></text>\r\n"
-                L"			<text><![CDATA[Please check back later.]]></text>\r\n"
+                L"			<text><![CDATA[%s]]></text>\r\n"
+                L"			<text><![CDATA[%s]]></text>\r\n"
                 L"			<text placement=\"attribution\"><![CDATA[ExplorerPatcher]]></text>\r\n"
                 L"		</binding>\r\n"
                 L"	</visual>\r\n"
                 L"	<audio src=\"ms-winsoundevent:Notification.Default\" loop=\"false\" silent=\"false\"/>\r\n"
                 L"</toast>\r\n";
-            const wchar_t text2[] =
-                L"<toast scenario=\"reminder\" "
-                L"activationType=\"protocol\" launch=\"" _T(UPDATES_RELEASE_INFO_URL) L"\" duration=\"short\">\r\n"
-                L"	<visual>\r\n"
-                L"		<binding template=\"ToastGeneric\">\r\n"
-                L"			<text><![CDATA[Unable to check for updates]]></text>\r\n"
-                L"			<text><![CDATA[Make sure that you are connected to the Internet and that the remote server is online.]]></text>\r\n"
-                L"			<text placement=\"attribution\"><![CDATA[ExplorerPatcher]]></text>\r\n"
-                L"		</binding>\r\n"
-                L"	</visual>\r\n"
-                L"	<audio src=\"ms-winsoundevent:Notification.Default\" loop=\"false\" silent=\"false\"/>\r\n"
-                L"</toast>\r\n";
+
+            if(bFail)
+            {
+                swprintf_s(buf, TOAST_BUFSIZ, text, Utf8Text("无法获取更新"), Utf8Text("请确保您已经连接至互联网并且更新服务器在线"));
+            }
+            else
+            {
+                swprintf_s(buf, TOAST_BUFSIZ, text, Utf8Text("没有更新可用"), Utf8Text("请稍后再检查"));
+            }
+
             __x_ABI_CWindows_CData_CXml_CDom_CIXmlDocument* inputXml = NULL;
             String2IXMLDocument(
-                bFail ? text2 : text,
-                wcslen(bFail ? text2 : text),
+                buf,
+                wcslen(buf),
                 &inputXml,
                 NULL
             );
