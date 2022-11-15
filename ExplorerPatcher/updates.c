@@ -988,14 +988,14 @@ BOOL InstallUpdatesIfAvailable(
             L"activationType=\"protocol\" launch=\"" _T(UPDATES_RELEASE_INFO_URL) L"\" duration=\"long\">\r\n"
             L"	<visual>\r\n"
             L"		<binding template=\"ToastGeneric\">\r\n"
-            L"			<text><![CDATA[Checking for updates]]></text>\r\n"
-            L"			<text><![CDATA[Installed version: %d.%d.%d.%d]]></text>\r\n"
+            L"			<text><![CDATA[%s]]></text>\r\n"
+            L"			<text><![CDATA[%s: %d.%d.%d.%d]]></text>\r\n"
             L"			<text placement=\"attribution\"><![CDATA[ExplorerPatcher]]></text>\r\n"
             L"		</binding>\r\n"
             L"	</visual>\r\n"
             L"	<audio src=\"ms-winsoundevent:Notification.Default\" loop=\"false\" silent=\"false\"/>\r\n"
             L"</toast>\r\n";
-        swprintf_s(buf, TOAST_BUFSIZ, text, dwLeftMost, dwSecondLeft, dwSecondRight, dwRightMost);
+        swprintf_s(buf, TOAST_BUFSIZ, text, Utf8Text("获取新版本中..."), Utf8Text("当前版本"), dwLeftMost, dwSecondLeft, dwSecondRight, dwRightMost);
         String2IXMLDocument(
             buf,
             wcslen(buf),
