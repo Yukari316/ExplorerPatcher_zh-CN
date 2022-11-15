@@ -126,13 +126,15 @@ void PlayHelpMessage(GUI* _this)
     swprintf_s(
         wszAccText,
         1000,
-        L"Welcome to ExplorerPatcher. "
-        L"Selected page is: %s: %d of %d. "
-        L"To switch pages, press the Left or Right arrow keys or press a number (%d to %d). "
-        L"To select an item, press the Up or Down arrow keys or Shift+Tab and Tab. "
-        L"To interact with the selected item, press Space or Return. "
-        L"To close this window, press Escape. "
-        L"Press a number to switch to the corresponding page: ",
+        Utf8Text(
+            "欢迎使用ExplorerPatcher。"
+            "当前的页面为：%s (%d/%d)。"
+            "如果需要切换设置页面，按下方向键中的左右键，或者按下数字键(%d/%d)。"
+            "如果需要切换设置条目，按下方向键中的上下键，或者按下Shift和Shift+Tab"
+            "如果需要修改选中的选项，按下空格或者回车进行修改。"
+            "如果需要推出此窗口，按下Esc。"
+            "按下数字键来切换对应的页面。"
+        ),
         _this->sectionNames[_this->section],
         _this->section + 1,
         max_section + 1,
@@ -149,7 +151,8 @@ void PlayHelpMessage(GUI* _this)
         swprintf_s(wszAdd, 100, L"%d: %s, ", i + 1, _this->sectionNames[i]);
         wcscat_s(wszAccText, 1000, wszAdd);
     }
-    wcscat_s(wszAccText, 1000, L"\nTo listen to this message again, press the F1 key at any time.\n");
+    //L"\nTo listen to this message again, press the F1 key at any time.\n"
+    wcscat_s(wszAccText, 1000, Utf8Text("\n如需要再看到这条消息，在需要时按下F1\n"));
     SetWindowTextW(_this->hAccLabel, wszAccText);
     NotifyWinEvent(
         EVENT_OBJECT_LIVEREGIONCHANGED,
@@ -1345,7 +1348,7 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                                         if (GetTimeFormatEx(wszWeatherLanguage[0] ? wszWeatherLanguage : wszLanguage, TIME_NOSECONDS, &stLastUpdate, NULL, wszTime, MAX_PATH))
                                         {
                                             bOk = TRUE;
-                                            swprintf_s(text, MAX_LINE_LENGTH, Utf8Text("上一次更新: %s, %s."), wszDate, wszTime);
+                                            swprintf_s(text, MAX_LINE_LENGTH, Utf8Text(L"上一次更新: %s, %s."), wszDate, wszTime);
                                         }
                                     }
                                 }
@@ -1503,11 +1506,11 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                                 swprintf_s(
                                     accText, 
                                     1000, 
-                                    L"%s %s - Button.",
+                                    Utf8Text("%s %s - Button."),
                                     (_this->dwPageLocation < 0 ?
-                                    L"Reached end of the page." :
+                                    Utf8Text("已经是最后一个页面") :
                                     (_this->dwPageLocation > 0 ?
-                                    L"Reached beginning of the page." : L"")),
+                                    Utf8Text("已经是第一个页面") : L"")),
                                     text
                                 );
                                 _this->dwPageLocation = 0;
@@ -1997,7 +2000,7 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                                         GUI_Build(0, hwnd, pt);
                                         fclose(AuditFile);
                                         AuditFile = NULL;
-                                        MessageBoxW(hwnd, L"Settings have been exported successfully.", GUI_title, MB_ICONINFORMATION);
+                                        MessageBoxW(hwnd, Utf8Text("设置已成功导出."), GUI_title, MB_ICONINFORMATION);
                                     }
                                 }
                             }
@@ -3169,9 +3172,9 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                                     1000,
                                     L"%s %s %s: %s",
                                     (_this->dwPageLocation < 0 ?
-                                        L"Reached end of the page." :
+                                        Utf8Text("已经是最后一个页面") :
                                         (_this->dwPageLocation > 0 ?
-                                            L"Reached beginning of the page." : L"")),
+                                            Utf8Text("已经是第一个页面") : L"")),
                                     (lastHeading[0] == 0) ? L"" : lastHeading,
                                     (dwType == 1 || dwType == 2) ? text + 1 : text,
                                     dwType == 1 ? L"Enabled" :
@@ -3218,11 +3221,11 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                                 }
                                 if (dwTypeRepl == 1)
                                 {
-                                    swprintf_s(accText, 1000, accText2, L" - Requires registration as shell extension to work in Open or Save file dialogs - ");
+                                    swprintf_s(accText, 1000, accText2, Utf8Text(" - 需要注册为外壳扩展才能在\"打开\"和\"保存\"对话框中工作 - "));
                                 }
                                 else
                                 {
-                                    swprintf_s(accText, 1000, accText2, L" - Requires File Explorer restart to apply - ");
+                                    swprintf_s(accText, 1000, accText2, Utf8Text(" - 需要重启资源管理器才能应用 - "));
                                 }
                                 //wprintf(L">>> %s\n", accText);
                                 SetWindowTextW(_this->hAccLabel, accText);
@@ -3320,7 +3323,7 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
             swprintf_s(
                 wszAccText,
                 100,
-                L"Selected page: %s: %d of %d.",
+                Utf8Text("当前的页面: %s (%d/%d)"),
                 _this->sectionNames[_this->section],
                 _this->section + 1,
                 max_section + 1
