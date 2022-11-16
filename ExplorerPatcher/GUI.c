@@ -2203,10 +2203,11 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                             {
                                 if (MessageBoxW(
                                     hwnd,
-                                    L"Are you sure you want to permanently clear the weather widget's local data?\n\n"
-                                    L"This will reset the internal components to their default state, but will preserve "
-                                    L"your preferences. This may fix the widget not loading the data properly, or "
-                                    L"having layout issues etc.",
+                                    Utf8Text(
+                                        "是否要清除天气小部件的数据\n\n"
+                                        "这将清除小部件的数据，但会保留设置的选项\n"
+                                        "这可能可以解决小部件的数据错误或渲染错误"
+                                    ),
                                     _T(PRODUCT_NAME),
                                     MB_ICONQUESTION | MB_YESNO) == IDYES)
                                 {
@@ -2220,7 +2221,7 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                                         PleaseWaitCallbackData = &res;
                                         PleaseWaitCallbackFunc = GUI_Internal_DeleteWeatherFolder;
                                         PleaseWaitHook = SetWindowsHookExW(WH_CALLWNDPROC, PleaseWait_HookProc, NULL, GetCurrentThreadId());
-                                        MessageBoxW(hwnd, L"Please wait...", _T(PRODUCT_NAME), 0);
+                                        MessageBoxW(hwnd, Utf8Text("请稍候..."), _T(PRODUCT_NAME), 0);
                                     }
                                     else
                                     {
@@ -2228,13 +2229,13 @@ static BOOL GUI_Build(HDC hDC, HWND hwnd, POINT pt)
                                     }
                                     if (res == IDOK)
                                     {
-                                        MessageBoxW(hwnd, L"Weather widget data cleared successfully.", _T(PRODUCT_NAME), MB_ICONINFORMATION);
+                                        MessageBoxW(hwnd, Utf8Text("天气小部件数据已清除"), _T(PRODUCT_NAME), MB_ICONINFORMATION);
                                     }
                                     else
                                     {
                                         if (res == IDABORT)
                                         {
-                                            MessageBoxW(hwnd, L"An error has occured while clearing the data.", _T(PRODUCT_NAME), MB_ICONERROR);
+                                            MessageBoxW(hwnd, Utf8Text("清除数据时发生错误"), _T(PRODUCT_NAME), MB_ICONERROR);
                                         }
                                     }
                                     if (dwData)

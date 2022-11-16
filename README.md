@@ -13,8 +13,10 @@
 - [ ] Windows10 GUI文本(ExplorerPatcher/settings.reg)
 - [x] 更新相关动态文本及系统通知(ExplorerPatcher/update.c)
 - [x] GUI自动生成的文本`swprintf_s函数相关`(ExplorerPatcher/GUI.c)
-- [ ] GUI自动生成的文本`MessageBoxW对话框`(ExplorerPatcher/GUI.c)
+- [x] GUI自动生成的文本`MessageBoxW对话框`(ExplorerPatcher/GUI.c)
+- [ ] 安装程序自动生成的文本`MessageBoxW对话框`(ep_setup/ep_setup.c)
 - [x] 更新服务器(ExplorerPatcher/update.h)
+
 
 
 ## 如何使用
