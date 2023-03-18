@@ -9,14 +9,14 @@
 
 此为对gui进行翻译并适配字符后的汉化版本，目前只汉化了在`Windows 11`系统下运行的GUI文本，`Windows 10`环境暂无计划进行汉化，如果有时间会尽量完成所有汉化并保持更新
 
-### 本地化进度
+### 本地化的部分
 > 如果有遗漏可以通过issue或PR进行补充
-- [x] Windows11 GUI文本(ExplorerPatcher/settings.reg)
-- [ ] Windows10 GUI文本(ExplorerPatcher/settings.reg)
-- [x] 更新相关动态文本及系统通知(ExplorerPatcher/update.c)
-- [x] GUI自动生成的文本`swprintf_s函数相关`(ExplorerPatcher/GUI.c)
-- [x] GUI自动生成的文本`MessageBoxW对话框`(ExplorerPatcher/GUI.c)
-- [x] 更新服务器(ExplorerPatcher/update.h)
+- Windows11 GUI文本(ExplorerPatcher/settings.reg)
+- ~~Windows10 GUI文本(ExplorerPatcher/settings.reg)~~
+- 更新相关动态文本及系统通知(ExplorerPatcher/update.c)
+- GUI自动生成的文本`swprintf_s函数相关`(ExplorerPatcher/GUI.c)
+- GUI自动生成的文本`MessageBoxW对话框`(ExplorerPatcher/GUI.c)
+- 更新服务器(ExplorerPatcher/update.h)
 
 ## 如何使用
 
