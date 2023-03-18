@@ -3,6 +3,8 @@
 
 给原作者赞助PayPal: [here](https://www.paypal.com/donate?business=valentingabrielradu%40gmail.com&no_recurring=0&item_name=ExplorerPatcher&currency_code=EUR) ，邮箱 valentingabrielradu@gmail.com
 
+源repo英文[wiki](https://github.com/valinet/ExplorerPatcher/wiki)
+
 ![Build status](https://github.com/Yukari316/ExplorerPatcher_zh-CN/actions/workflows/build.yml/badge.svg)
 
 此为对gui进行翻译并适配字符后的汉化版本，目前只汉化了在`Windows 11`系统下运行的GUI文本，`Windows 10`环境暂无计划进行汉化，如果有时间会尽量完成所有汉化并保持更新
@@ -31,12 +33,3 @@
 3. 安装完成后，程序将重新启动`Windows资源管理器(explorer.exe)`,您将看到熟悉的Windows10任务栏。
 
 4. 需要修改设置选项，右键任务栏并选择“属性”选项进行修改。
-
-# 以下为原repo的英文原文
-
-# ExplorerPatcher
-This project aims to enhance the working environment on Windows.
-
-PayPal donations: [here](https://www.paypal.com/donate?business=valentingabrielradu%40gmail.com&no_recurring=0&item_name=ExplorerPatcher&currency_code=EUR) or using e-mail address valentingabrielradu@gmail.com
-
-[Read more](https://github.com/valinet/ExplorerPatcher/wiki)
