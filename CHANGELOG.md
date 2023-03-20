@@ -19,7 +19,11 @@ Please make sure you are connected to the Internet while installing, the applica
 
 ##### 2
 
-* Windows 10 Start menu: Fixed a bug that prevented non-Win32 apps from showing up in the menu on OS build 22621.1413+. (bd6a13d) (#1108)
+* Weather: Fixed a bug that prevented the widget from displaying correctly. (a5e5287)
+
+##### 3
+
+* Windows 11 Start menu: Better enforcement for disabling the "Recommended" section. (27a8fd9)
 
 ## 22621.1344.53
 
