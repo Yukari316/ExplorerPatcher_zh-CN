@@ -341,13 +341,13 @@
 "AltTabSettings"=dword:00000000
 ;s WindowSwitcher_SWS IsSWSEnabled
 [HKEY_CURRENT_USER\Software\ExplorerPatcher\sws]
-;b 切换到桌面
+;b 显示桌面为最后一个切换窗口
 "IncludeWallpaper"=dword:00000001
 ;b 始终在主显示器上显示
 "PrimaryOnly"=dword:00000000
-;b 只显示当前显示器中的窗口
+;b 只显示光标所在显示器中的窗口
 "PerMonitor"=dword:00000000
-;b 只显示最近使用的窗口 (合并相同应用窗口)
+;b 将相同应用的窗口分组
 "SwitcherIsPerApplication"=dword:00000000
 ;b %PLACEHOLDER_0001%
 "NoPerApplicationList"=dword:00000000
