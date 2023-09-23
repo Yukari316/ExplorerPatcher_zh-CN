@@ -23,8 +23,12 @@
 > ⚠⚠⚠⚠
 > 
 > **安装过程中将会终止`Windows资源管理器(explorer.exe)`的运行，显示器上可能不会显示任何画面（包括桌面）**
+>
+> **安装过程必须联网！(最好挂梯)**
 > 
 > ⚠⚠⚠⚠
+
+> 双击安装后如果超过`1分钟`都妹有看到`Windows资源管理器(explorer.exe)`重启，请使用`Win+R`输入`explorer.exe`进行手动重启
 
 1. 在releases中下载最新的版本（或预发布版本） [ep_setup.exe](https://github.com/Yukari316/ExplorerPatcher_zh-CN/releases/).
 
@@ -33,3 +37,7 @@
 3. 安装完成后，程序将重新启动`Windows资源管理器(explorer.exe)`,您将看到熟悉的Windows10任务栏。
 
 4. 需要修改设置选项，右键任务栏并选择“属性”选项进行修改。
+
+## 如何卸载
+
+进入控制面板 -> 程序和功能 -> 双击`ExplorerPatcher` -> 卸载
