@@ -5,6 +5,8 @@
 
 源repo英文[wiki](https://github.com/valinet/ExplorerPatcher/wiki)
 
+ExplorerPatcher Discord [here](https://discord.gg/gsPcfqHTD2)
+
 ![Build status](https://github.com/Yukari316/ExplorerPatcher_zh-CN/actions/workflows/build.yml/badge.svg)
 
 此为对gui进行翻译并适配字符后的汉化版本，目前只汉化了在`Windows 11`系统下运行的GUI文本，`Windows 10`环境暂无计划进行汉化，如果有时间会尽量完成所有汉化并保持更新
