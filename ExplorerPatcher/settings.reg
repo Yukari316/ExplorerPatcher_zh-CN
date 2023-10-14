@@ -248,7 +248,7 @@
 
 ;T 开始菜单
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-;z 2 开始菜单风格
+;z 2 开始菜单风格 *
 ;x 0 Windows 11 (默认)
 ;x 1 Windows 10
 "Start_ShowClassicMode"=dword:00000000
