@@ -1,5 +1,6 @@
 # ExplorerPatcher
 该项目旨在增强 Windows 上的工作环境.
+本fork项目为我所翻译的中文版本，官方版本现在已经支持了简体中文，该版本只有部分文本和官方的翻译不同
 
 给原作者赞助PayPal: [here](https://www.paypal.com/donate?business=valentingabrielradu%40gmail.com&no_recurring=0&item_name=ExplorerPatcher&currency_code=EUR) ，邮箱 valentingabrielradu@gmail.com
 
