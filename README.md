@@ -1,3 +1,6 @@
+## 官方版本已经对多语言有了完整的支持，这个汉化版本不会再更新
+## 请前往官方仓库安装最新版本 [ExplorerPatcher](https://github.com/valinet/ExplorerPatcher)
+
 # ExplorerPatcher
 该项目旨在增强 Windows 上的工作环境.
 
